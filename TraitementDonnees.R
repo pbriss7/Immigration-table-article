@@ -77,7 +77,7 @@ ral[, Pays_cat := fcase(
 
 ral[str_detect(Annee_publication, "[0-9]", negate = TRUE), .(Auteur, Titre, Editeur, Annee_publication)] # 3 titres
 
-
+# Corrections à la pièce (parfois, il faut ce qu'il faut)
 ral[Auteur == "Chevalier, H. Émile (Henri Émile), 1828-1879" &
       Titre == "L'Île de Sable", Annee_publication:="1854"]
 
