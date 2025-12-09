@@ -2,10 +2,10 @@
 
 library(data.table)
 library(stringi) 
-# library(wordcloud2) 
+library(wordcloud2) 
 
 # ------------------------------------------------------------
-#' Fréquence des descripteurs issus de plusieurs colonnes
+#' Génère une fréquence des descripteurs issus d'une ou de plusieurs colonnes
 #'
 #' @param dt          data.table contenant les colonnes à analyser
 #' @param cols        vecteur de noms de colonnes à exploiter
@@ -35,7 +35,7 @@ freq_descripteurs <- function(dt,
   #--- 2. Fonction interne de nettoyage -----------------------------------------
   clean_one <- function(x) {
     # x : vecteur de chaînes (une colonne)
-    # 2.1. Éclater la chaîne
+    # 2.1. Séparer les éléments de la chaîne
     splitted <- strsplit(x, split = sep, fixed = TRUE)
     
     # 2.2. Aplatir + retirer les NA/"" éventuels
